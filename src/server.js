@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 const path = require('path');
 
+const healthCheckRoutes = require('./routes/healthCheck.routes');
+
 require('dotenv').config({ 
     path: path.resolve(__dirname, './.env') 
 });
@@ -17,6 +19,8 @@ app.use(
     }),
 );
 
+
+app.use('/health-check', healthCheckRoutes);
 
 const port = process.env.PORT || 3000;
 
