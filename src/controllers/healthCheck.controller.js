@@ -8,4 +8,4 @@ const healthCheck = asyncHandler(async (req, res) => {
 
 module.exports = {
     healthCheck,
-}
+};
